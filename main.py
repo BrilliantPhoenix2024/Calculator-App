@@ -43,6 +43,22 @@ calc_keys = [
         'text' : '-',
         'command': lambda: print('-'),
     },
+      {
+        'text' : '1',
+        'command' : lambda: print('1'),
+    },
+    {
+        'text' : '2',
+        'command': lambda: print('2'),
+    },
+    {
+        'text' : '3',
+        'command': lambda: print('3'),
+    },
+    {
+        'text' : '*',
+        'command': lambda: print('*'),
+    },
 ]
 
 calc_keys_objs = []
