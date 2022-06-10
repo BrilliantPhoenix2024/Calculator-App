@@ -10,70 +10,73 @@ lbl_calc_result = tk.Label(
 )
 lbl_calc_result.grid(row=0, column=0, columnspan=4)
 
+def insert_number_in_calc_result(btn_text):
+    lbl_calc_result['text']= btn_text 
+
 calc_keys = [
     {
         'text' : '7',
-        'command' : lambda: print('7'),
+        'command' : lambda: insert_number_in_calc_result('7'),
     },
     {
         'text' : '8',
-        'command': lambda: print('8'),
+        'command': lambda: insert_number_in_calc_result('8'),
     },
     {
         'text' : '9',
-        'command': lambda: print('9'),
+        'command': lambda: insert_number_in_calc_result('9'),
     },
     {
         'text' : '+',
-        'command': lambda: print('+'),
+        'command': lambda: insert_number_in_calc_result('+'),
     },
     {
         'text' : '4',
-        'command' : lambda: print('4'),
+        'command' : lambda: insert_number_in_calc_result('4'),
     },
     {
         'text' : '5',
-        'command': lambda: print('5'),
+        'command': lambda: insert_number_in_calc_result('5'),
     },
     {
         'text' : '6',
-        'command': lambda: print('6'),
+        'command': lambda: insert_number_in_calc_result('6'),
     },
     {
         'text' : '-',
-        'command': lambda: print('-'),
+        'command': lambda: insert_number_in_calc_result('-'),
     },
     {
         'text' : '1',
-        'command' : lambda: print('1'),
+        'command' : lambda: insert_number_in_calc_result('1'),
     },
     {
         'text' : '2',
-        'command': lambda: print('2'),
+        'command': lambda: insert_number_in_calc_result('2'),
     },
     {
         'text' : '3',
-        'command': lambda: print('3'),
+        'command': lambda: insert_number_in_calc_result('3'),
     },
     {
         'text' : '*',
-        'command': lambda: print('*'),
+        'command': lambda: insert_number_in_calc_result('*'),
     },
     {
         'text' : '.',
-        'command': lambda: print('.'),
+        'command': lambda: insert_number_in_calc_result('.'),
     },
     {
         'text' : '0',
-        'command': lambda: print('0'),
+        'command': lambda: insert_number_in_calc_result('0'),
     },
     {
         'text' : 'C',
-        'command': lambda: print('C'),
+        'command': lambda: insert_number_in_calc_result('C'),
     },
     {
         'text' : '=',
-        'command' : lambda: print('='),
+        'command' : lambda: insert_number_in_calc_result('='),
     },
 ]
 
@@ -90,8 +93,7 @@ for calc_key_data in calc_keys:
     calc_keys_objs.append(btn) 
     
 for i, calc_key_obj in enumerate(calc_keys_objs):
-    if i // 4 == 0:
-        calc_key_obj.grid(row= (i//4)+1, column= i%4, sticky='nsew')
+    calc_key_obj.grid(row= (i//4)+1, column= i%4, sticky='nsew')
         
 
 window.mainloop()
