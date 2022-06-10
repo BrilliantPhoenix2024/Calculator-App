@@ -27,7 +27,7 @@ calc_keys = [
         'text' : '+',
         'command': lambda: print('+'),
     },
-      {
+    {
         'text' : '4',
         'command' : lambda: print('4'),
     },
@@ -43,7 +43,7 @@ calc_keys = [
         'text' : '-',
         'command': lambda: print('-'),
     },
-      {
+    {
         'text' : '1',
         'command' : lambda: print('1'),
     },
@@ -58,6 +58,22 @@ calc_keys = [
     {
         'text' : '*',
         'command': lambda: print('*'),
+    },
+    {
+        'text' : '.',
+        'command': lambda: print('.'),
+    },
+    {
+        'text' : '0',
+        'command': lambda: print('0'),
+    },
+    {
+        'text' : 'C',
+        'command': lambda: print('C'),
+    },
+    {
+        'text' : '=',
+        'command' : lambda: print('='),
     },
 ]
 
