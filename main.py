@@ -12,7 +12,9 @@ lbl_calc_result.grid(row=0, column=0, columnspan=4)
 
 def insert_number_in_calc_result(btn_text):
     current = lbl_calc_result['text']
-    if current == '0':
+    if btn_text == 'C':
+        lbl_calc_result['text'] = '0'
+    elif current == '0':
         lbl_calc_result['text'] = btn_text
     elif btn_text == '=':
         lbl_calc_result['text'] = str(eval(current))
@@ -26,8 +28,6 @@ def insert_number_in_calc_result(btn_text):
             lbl_calc_result['text'] += btn_text
              
      
-
-
 calc_keys = [
     {
         'text' : '7',
@@ -42,8 +42,8 @@ calc_keys = [
         'command': lambda: insert_number_in_calc_result('9'),
     },
     {
-        'text' : '+',
-        'command': lambda: insert_number_in_calc_result('+'),
+        'text' : '*',
+        'command': lambda: insert_number_in_calc_result('*'),
     },
     {
         'text' : '4',
@@ -74,16 +74,16 @@ calc_keys = [
         'command': lambda: insert_number_in_calc_result('3'),
     },
     {
-        'text' : '*',
-        'command': lambda: insert_number_in_calc_result('*'),
-    },
-    {
-        'text' : '.',
-        'command': lambda: insert_number_in_calc_result('.'),
+        'text' : '+',
+        'command': lambda: insert_number_in_calc_result('+'),
     },
     {
         'text' : '0',
         'command': lambda: insert_number_in_calc_result('0'),
+    },
+    {
+        'text' : '.',
+        'command': lambda: insert_number_in_calc_result('.'),
     },
     {
         'text' : 'C',
