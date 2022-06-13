@@ -19,7 +19,9 @@ def insert_number_in_calc_result(btn_text):
     elif btn_text == '=':
         lbl_calc_result['text'] = str(eval(current))
     else:
-        if btn_text in ['+', '-', '*']:
+        if btn_text == '.' and current[-1] == '.':
+            pass
+        elif btn_text in ['+', '-', '*']:
             if current[-1] in ['+', '-', '*']:
                 lbl_calc_result['text'] = current[:-1] + btn_text
             else:
