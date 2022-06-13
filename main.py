@@ -10,24 +10,34 @@ lbl_calc_result = tk.Label(
 )
 lbl_calc_result.grid(row=0, column=0, columnspan=4)
 
+
+def is_last_number_float(current):
+    for char in current[::-1]:
+        if char == '.':
+            return True
+        if char in ['+','*','-']:
+            return False
+        
+    return False   
+
+
 def insert_number_in_calc_result(btn_text):
     current = lbl_calc_result['text']
+    
     if btn_text == 'C':
         lbl_calc_result['text'] = '0'
     elif current == '0':
         lbl_calc_result['text'] = btn_text
     elif btn_text == '=':
-        lbl_calc_result['text'] = str(eval(current))
-    else:
-        if btn_text == '.' and current[-1] == '.':
-            pass
-        elif btn_text in ['+', '-', '*']:
-            if current[-1] in ['+', '-', '*']:
-                lbl_calc_result['text'] = current[:-1] + btn_text
-            else:
-                lbl_calc_result['text'] += btn_text
-        else:
+        result = f'{eval(current)}'
+        lbl_calc_result['text'] = result
+    elif btn_text == '.':
+        if not is_last_number_float(current):
             lbl_calc_result['text'] += btn_text
+    elif btn_text in ['+', '-', '*'] and current[-1] in ['+', '-', '*']:
+        lbl_calc_result['text'] = current[:-1] + btn_text
+    else:
+        lbl_calc_result['text'] += btn_text
              
      
 calc_keys = [
@@ -98,7 +108,6 @@ calc_keys = [
 ]
 
 calc_keys_objs = []
-
 
 for calc_key_data in calc_keys:
     btn = tk.Button(
